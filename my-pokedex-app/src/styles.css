@@ -1,1 +1,45 @@
-/* You can add global styles to this file, and also import other style files */
+
+/* Import Google Fonts for a modern, playful look */
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Roboto:wght@400;700&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/* Set up base font styles */
+html, body {
+	height: 100%;
+	font-family: 'Roboto', Arial, sans-serif;
+	background: #f5f5f5;
+	color: #222;
+}
+
+body {
+	min-height: 100vh;
+}
+
+/* Headings use a pixel-style font for a Pokedex vibe */
+h1, h2, h3, h4, h5, h6 {
+	font-family: 'Roboto', Arial, sans-serif;
+	letter-spacing: 1px;
+	margin: 0;
+}
+
+/* Remove default list styles */
+ul, ol {
+	list-style: none;
+}
+
+/* Remove link underline and set color */
+a {
+    text-decoration: none;
+    cursor: pointer;
+}
+a:hover {
+	text-decoration: underline;
+}
+
+/* Box-sizing for all elements */
+*, *::before, *::after {
+	box-sizing: inherit;
+}

@@ -2,6 +2,7 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { PokemonComponent } from './pokemon/pokemon.component';
 import { Pokemon } from '../../models/pokemon.model';
 import { AddPokemonComponent } from './add-pokemon/add-pokemon.component';
+import { NewPokemonData } from '../../models/new-pokemon.model';
 
 @Component({
   selector: 'app-team-info',
@@ -280,6 +281,17 @@ export class TeamInfoComponent {
   }
 
   onCancelAddPokemon() {
+    this.isAddPokemonVisible = false;
+  }
+
+  onAddPokemon(pokemonData: NewPokemonData) {
+    this.pokemons.unshift({
+      id: new Date().getTime().toString(),
+      trainer: this.trainerId,
+      name: pokemonData.pokemon,
+      types: pokemonData.types,
+      pokedexEntry: pokemonData.pokedexEntry,
+    });
     this.isAddPokemonVisible = false;
   }
 }

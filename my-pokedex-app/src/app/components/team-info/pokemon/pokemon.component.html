@@ -1,10 +1,12 @@
-<article>
-  <h2>{{ pokemon.name }}</h2>
-  @for (type of pokemon.types; track pokemon.id) {
-  <span class="type {{ type | lowercase }}">{{ type }}</span>
-  }
-  <p>{{ pokemon.pokedexEntry }}</p>
-  <p class="actions">
-    <button (click)="onDeleteClick()">Delete</button>
-  </p>
-</article>
+<app-card>
+  <article>
+    <h2>{{ pokemon.name }}</h2>
+    @for (type of pokemon.types; track pokemon.id) {
+    <span class="type {{ type | lowercase }}">{{ type }}</span>
+    }
+    <p>{{ pokemon.pokedexEntry }}</p>
+    <p class="actions">
+      <button (click)="onDeleteClick()">Delete</button>
+    </p>
+  </article>
+</app-card>

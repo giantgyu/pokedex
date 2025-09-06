@@ -1,10 +1,11 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Pokemon } from '../../../models/pokemon.model';
 import { LowerCasePipe } from '@angular/common';
+import { CardComponent } from '../../../shared/card/card.component';
 
 @Component({
   selector: 'app-pokemon',
-  imports: [LowerCasePipe],
+  imports: [LowerCasePipe, CardComponent],
   templateUrl: './pokemon.component.html',
   styleUrl: './pokemon.component.css',
 })

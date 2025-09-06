@@ -1,5 +1,5 @@
 @if (isAddPokemonVisible){
-<app-add-pokemon (cancel)="onCancelAddPokemon()" />
+<app-add-pokemon (cancel)="onCancelAddPokemon()" (add)="onAddPokemon($event)" />
 }
 
 <section id="team-info">

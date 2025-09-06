@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { NewPokemonData } from '../../../models/new-pokemon.model';
 
 @Component({
   selector: 'app-add-pokemon',
@@ -9,6 +10,8 @@ import { FormsModule } from '@angular/forms';
 })
 export class AddPokemonComponent {
   @Output() cancel = new EventEmitter<void>();
+  @Output() add = new EventEmitter<NewPokemonData>();
+
   enteredPokemon = '';
   enteredPokedexEntry = '';
   enteredType1 = '';
@@ -16,5 +19,13 @@ export class AddPokemonComponent {
 
   onCancelClick() {
     this.cancel.emit();
+  }
+
+  onSubmit() {
+    this.add.emit({
+      pokemon: this.enteredPokemon,
+      types: [this.enteredType1, this.enteredType2],
+      pokedexEntry: this.enteredPokedexEntry,
+    });
   }
 }

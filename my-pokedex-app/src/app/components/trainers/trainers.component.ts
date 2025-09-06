@@ -16,6 +16,6 @@ export class TrainersComponent {
   }
 
   onTrainerClick() {
-    this.challengeTrainer.emit(this.name);
+    this.challengeTrainer.emit(this.id);
   }
 }

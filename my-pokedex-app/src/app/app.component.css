@@ -29,7 +29,7 @@ main {
     grid-template-columns: 1fr 3fr;
   }
 
-  #users {
+  #trainers {
     flex-direction: column;
   }
 

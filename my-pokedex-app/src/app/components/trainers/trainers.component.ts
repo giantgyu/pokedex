@@ -1,5 +1,4 @@
-import { Component } from '@angular/core';
-import { DUMMY_USERS } from '../../dummy-users';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-trainers',
@@ -8,13 +7,12 @@ import { DUMMY_USERS } from '../../dummy-users';
   styleUrl: './trainers.component.css',
 })
 export class TrainersComponent {
-  selectedTrainer = DUMMY_USERS[Math.floor(Math.random() * DUMMY_USERS.length)];
+  @Input({ required: true }) avatar!: string;
+  @Input({ required: true }) name!: string;
 
   get imagePath() {
-    return 'assets/users/' + this.selectedTrainer.avatar;
+    return 'assets/users/' + this.avatar;
   }
 
-  onSelectTrainer() {
-    alert('Select Trainer');
-  }
+  onSelectTrainer() {}
 }

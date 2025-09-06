@@ -4,33 +4,31 @@
   <ul id="trainers">
     <li>
       <app-trainers
-        [id]="trainers[0].id"
-        [avatar]="trainers[0].avatar"
-        [name]="trainers[0].name"
+        [trainer]="trainers[0]"
         (challengeTrainer)="onChallengeTrainer($event)"
       />
     </li>
     <li>
       <app-trainers
-        [id]="trainers[1].id"
-        [avatar]="trainers[1].avatar"
-        [name]="trainers[1].name"
+        [trainer]="trainers[1]"
         (challengeTrainer)="onChallengeTrainer($event)"
       />
     </li>
     <li>
       <app-trainers
-        [id]="trainers[2].id"
-        [avatar]="trainers[2].avatar"
-        [name]="trainers[2].name"
+        [trainer]="trainers[2]"
         (challengeTrainer)="onChallengeTrainer($event)"
       />
     </li>
     <li>
       <app-trainers
-        [id]="trainers[3].id"
-        [avatar]="trainers[3].avatar"
-        [name]="trainers[3].name"
+        [trainer]="trainers[3]"
+        (challengeTrainer)="onChallengeTrainer($event)"
+      />
+    </li>
+    <li>
+      <app-trainers
+        [trainer]="trainers[4]"
         (challengeTrainer)="onChallengeTrainer($event)"
       />
     </li>

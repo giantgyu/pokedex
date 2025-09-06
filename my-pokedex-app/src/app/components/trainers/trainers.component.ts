@@ -7,15 +7,17 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
   styleUrl: './trainers.component.css',
 })
 export class TrainersComponent {
-  @Input({ required: true }) id!: string;
-  @Input({ required: true }) avatar!: string;
-  @Input({ required: true }) name!: string;
+  @Input({ required: true }) trainer!: {
+    id: string;
+    name: string;
+    avatar: string;
+  };
   @Output() challengeTrainer = new EventEmitter<string>();
   get imagePath() {
-    return 'assets/users/' + this.avatar;
+    return 'assets/users/' + this.trainer.avatar;
   }
 
   onTrainerClick() {
-    this.challengeTrainer.emit(this.id);
+    this.challengeTrainer.emit(this.trainer.id);
   }
 }

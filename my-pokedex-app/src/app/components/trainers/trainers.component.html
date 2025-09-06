@@ -1,5 +1,5 @@
 <div>
-  <button (click)="onTrainerClick()">
+  <button [class.active]="isChallenged" (click)="onTrainerClick()">
     <img [src]="imagePath" [alt]="trainer.name" />
     <span>{{ trainer.name }}</span>
   </button>

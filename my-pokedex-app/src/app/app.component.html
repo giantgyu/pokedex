@@ -6,6 +6,7 @@
     <li>
       <app-trainers
         [trainer]="trainer"
+        [isChallenged]="trainer.id === challengedTrainerId"
         (challengeTrainer)="onChallengeTrainer($event)"
       />
     </li>

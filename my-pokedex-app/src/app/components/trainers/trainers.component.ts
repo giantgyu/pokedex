@@ -9,6 +9,7 @@ import { Trainer } from '../../models/trainer.model';
 })
 export class TrainersComponent {
   @Input({ required: true }) trainer!: Trainer;
+  @Input({ required: true }) isChallenged!: boolean;
   @Output() challengeTrainer = new EventEmitter<string>();
   get imagePath() {
     return 'assets/users/' + this.trainer.avatar;

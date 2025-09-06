@@ -7,5 +7,5 @@ import { Component, Input } from '@angular/core';
   styleUrl: './team-info.component.css',
 })
 export class TeamInfoComponent {
-  @Input({ required: true }) name!: string;
+  @Input() name?: string;
 }

@@ -19,12 +19,12 @@ import { TeamInfoComponent } from './components/team-info/team-info.component';
 export class AppComponent {
   trainers = DUMMY_USERS;
   title = 'my-pokedex-app';
-  challengedTrainerId: string = 'u1';
+  challengedTrainerId: string = '...';
 
   get challengedTrainer() {
     return this.trainers.find(
       (trainer) => trainer.id === this.challengedTrainerId
-    )!;
+    );
   }
 
   onChallengeTrainer(id: string) {

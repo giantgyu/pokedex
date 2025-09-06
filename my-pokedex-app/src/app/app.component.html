@@ -35,7 +35,7 @@
       />
     </li>
   </ul>
-  <app-team-info [name]="challengedTrainer.name" />
+  <app-team-info [name]="challengedTrainer ? challengedTrainer.name : ''" />
 </main>
 
 <app-footer></app-footer>

@@ -1,8 +1,12 @@
+@if (isAddPokemonVisible){
+<app-add-pokemon />
+}
+
 <section id="team-info">
   <header>
     <h2>{{ name }}</h2>
     <menu>
-      <button>Add a Pokemon</button>
+      <button (click)="onStartAddPokemon()">Add a Pokemon</button>
     </menu>
   </header>
 

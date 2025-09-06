@@ -1,9 +1,10 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { TrainersComponent } from './components/trainers/trainers.component';
 import { DUMMY_USERS } from './dummy-users';
 import { TeamInfoComponent } from './components/team-info/team-info.component';
+import { AddPokemonComponent } from './components/team-info/add-pokemon/add-pokemon.component';
 
 @Component({
   selector: 'app-root',
@@ -20,7 +21,7 @@ export class AppComponent {
   trainers = DUMMY_USERS;
   title = 'my-pokedex-app';
   challengedTrainerId?: string;
-
+  isAddPokemonVisible = false;
   get challengedTrainer() {
     return this.trainers.find(
       (trainer) => trainer.id === this.challengedTrainerId

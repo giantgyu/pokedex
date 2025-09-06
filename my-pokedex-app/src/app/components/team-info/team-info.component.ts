@@ -1,16 +1,19 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { PokemonComponent } from './pokemon/pokemon.component';
 import { Pokemon } from '../../models/pokemon.model';
+import { AddPokemonComponent } from './add-pokemon/add-pokemon.component';
 
 @Component({
   selector: 'app-team-info',
-  imports: [PokemonComponent],
+  imports: [PokemonComponent, AddPokemonComponent],
   templateUrl: './team-info.component.html',
   styleUrl: './team-info.component.css',
 })
 export class TeamInfoComponent {
   @Input({ required: true }) name!: string;
   @Input({ required: true }) trainerId!: string;
+  isAddPokemonVisible = false;
+
   pokemons: Pokemon[] = [
     // --- Brock (Rock-type) ---
     {
@@ -270,5 +273,9 @@ export class TeamInfoComponent {
     this.pokemons = this.pokemons.filter(
       (pokemon) => pokemon.id !== idToDelete
     );
+  }
+
+  onStartAddPokemon() {
+    this.isAddPokemonVisible = true;
   }
 }

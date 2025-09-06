@@ -7,14 +7,10 @@
   </header>
 
   <ul>
+    @for (pokemon of challengedTrainerPokemons; track pokemon.id){
     <li>
-      <app-pokemon />
+      <app-pokemon [pokemon]="pokemon" />
     </li>
-    <li>
-      <app-pokemon />
-    </li>
-    <li>
-      <app-pokemon />
-    </li>
+    }
   </ul>
 </section>

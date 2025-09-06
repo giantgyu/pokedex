@@ -12,7 +12,10 @@
     }
   </ul>
   @if (challengedTrainer) {
-  <app-team-info [name]="challengedTrainer ? challengedTrainer.name : ''" />
+  <app-team-info
+    [trainerId]="challengedTrainer.id"
+    [name]="challengedTrainer.name"
+  />
   } @else {
   <p id="fallback">Choose a trainer to challenge!</p>
   }

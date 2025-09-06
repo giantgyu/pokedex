@@ -1,7 +1,7 @@
 article {
   padding: 1rem;
-  color: #25113d;
-  background-color: #bf9ee5;
+  color: #3d1111;
+  background-color: #e59e9e;
 }
 
 h2 {
@@ -9,7 +9,7 @@ h2 {
 }
 
 time {
-  color: #3c2c50;
+  color: #502c2c;
 }
 
 .actions {
@@ -21,8 +21,8 @@ time {
   font: inherit;
   font-size: 0.9rem;
   cursor: pointer;
-  background-color: #380774;
-  color: #decdf2;
+  background-color: #740707;
+  color: #f2cdcd;
   border-radius: 4px;
   padding: 0.5rem 1.5rem;
   border: none;
@@ -32,6 +32,85 @@ time {
 
 .actions button:hover,
 .actions button:active {
-  background-color: #4a0774;
+  background-color: #740707;
   box-shadow: 0 1px 6px rgba(0, 0, 0, 0.3);
+}
+
+span.type {
+  border-radius: 0.2rem;
+  padding: 0.15rem;
+  margin: 0 0.2rem;
+}
+
+span.normal {
+  color: #fff;
+  background-color: var(--normal-color);
+}
+span.fire {
+  color: #fff;
+  background-color: var(--fire-color);
+}
+span.water {
+  color: #fff;
+  background-color: var(--water-color);
+}
+span.electric {
+  color: #fff;
+  background-color: var(--electric-color);
+}
+span.grass {
+  color: #fff;
+  background-color: var(--grass-color);
+}
+span.ice {
+  color: #fff;
+  background-color: var(--ice-color);
+}
+span.fighting {
+  color: #fff;
+  background-color: var(--fighting-color);
+}
+span.poison {
+  color: #fff;
+  background-color: var(--poison-color);
+}
+span.ground {
+  color: #fff;
+  background-color: var(--ground-color);
+}
+span.flying {
+  color: #fff;
+  background-color: var(--flying-color);
+}
+span.psychic {
+  color: #fff;
+  background-color: var(--psychic-color);
+}
+span.bug {
+  color: #fff;
+  background-color: var(--bug-color);
+}
+span.rock {
+  color: #fff;
+  background-color: var(--rock-color);
+}
+span.ghost {
+  color: #fff;
+  background-color: var(--ghost-color);
+}
+span.dragon {
+  color: #fff;
+  background-color: var(--dragon-color);
+}
+span.dark {
+  color: #fff;
+  background-color: var(--dark-color);
+}
+span.steel {
+  color: #fff;
+  background-color: var(--steel-color);
+}
+span.fairy {
+  color: #fff;
+  background-color: var(--fairy-color);
 }

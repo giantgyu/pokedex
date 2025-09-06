@@ -1,10 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-
-interface Trainer {
-  id: string;
-  name: string;
-  avatar: string;
-}
+import { Trainer } from '../../models/trainer.model';
 
 @Component({
   selector: 'app-trainers',

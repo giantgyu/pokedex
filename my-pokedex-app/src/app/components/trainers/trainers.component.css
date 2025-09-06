@@ -9,7 +9,7 @@ button {
   align-items: center;
   gap: 0.5rem;
   padding: 0.35rem 0.5rem;
-  background-color: #433352;
+  background-color: #523333;
   color: #c3b3d1;
   border: none;
   font: inherit;
@@ -22,7 +22,7 @@ button {
 button:hover,
 button:active,
 .active {
-  background-color: #9965dd;
+  background-color: #dd6565;
   color: #150722;
 }
 

@@ -9,7 +9,7 @@
   <ul>
     @for (pokemon of challengedTrainerPokemons; track pokemon.id){
     <li>
-      <app-pokemon [pokemon]="pokemon" />
+      <app-pokemon [pokemon]="pokemon" (delete)="onDeletePokemon($event)" />
     </li>
     }
   </ul>

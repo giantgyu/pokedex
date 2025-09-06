@@ -11,13 +11,6 @@ import { Pokemon } from '../../models/pokemon.model';
 export class TeamInfoComponent {
   @Input({ required: true }) name!: string;
   @Input({ required: true }) trainerId!: string;
-
-  get challengedTrainerPokemons() {
-    return this.pokemons.filter(
-      (pokemon) => pokemon.trainer === this.trainerId
-    );
-  }
-
   pokemons: Pokemon[] = [
     // --- Brock (Rock-type) ---
     {
@@ -266,4 +259,16 @@ export class TeamInfoComponent {
         'Protected by an armor-like hide, it is capable of living in molten lava of 3,600°F.',
     },
   ];
+  get challengedTrainerPokemons() {
+    return this.pokemons.filter(
+      (pokemon) => pokemon.trainer === this.trainerId
+    );
+  }
+
+  onDeletePokemon(idToDelete: string) {
+    alert('bro whyyy');
+    this.pokemons = this.pokemons.filter(
+      (pokemon) => pokemon.id !== idToDelete
+    );
+  }
 }

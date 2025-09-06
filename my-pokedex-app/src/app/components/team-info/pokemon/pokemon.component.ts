@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Pokemon } from '../../../models/pokemon.model';
 import { LowerCasePipe } from '@angular/common';
 
@@ -10,4 +10,9 @@ import { LowerCasePipe } from '@angular/common';
 })
 export class PokemonComponent {
   @Input({ required: true }) pokemon!: Pokemon;
+  @Output() delete = new EventEmitter<string>();
+
+  onDeleteClick() {
+    this.delete.emit(this.pokemon.id);
+  }
 }

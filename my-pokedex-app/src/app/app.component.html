@@ -2,38 +2,20 @@
 
 <main>
   <ul id="trainers">
+    @for (trainer of trainers; track trainer.id) {
     <li>
       <app-trainers
-        [trainer]="trainers[0]"
+        [trainer]="trainer"
         (challengeTrainer)="onChallengeTrainer($event)"
       />
     </li>
-    <li>
-      <app-trainers
-        [trainer]="trainers[1]"
-        (challengeTrainer)="onChallengeTrainer($event)"
-      />
-    </li>
-    <li>
-      <app-trainers
-        [trainer]="trainers[2]"
-        (challengeTrainer)="onChallengeTrainer($event)"
-      />
-    </li>
-    <li>
-      <app-trainers
-        [trainer]="trainers[3]"
-        (challengeTrainer)="onChallengeTrainer($event)"
-      />
-    </li>
-    <li>
-      <app-trainers
-        [trainer]="trainers[4]"
-        (challengeTrainer)="onChallengeTrainer($event)"
-      />
-    </li>
+    }
   </ul>
+  @if (challengedTrainer) {
   <app-team-info [name]="challengedTrainer ? challengedTrainer.name : ''" />
+  } @else {
+  <p id="fallback">Choose a trainer to challenge!</p>
+  }
 </main>
 
 <app-footer></app-footer>

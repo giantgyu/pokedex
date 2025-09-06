@@ -19,7 +19,7 @@ import { TeamInfoComponent } from './components/team-info/team-info.component';
 export class AppComponent {
   trainers = DUMMY_USERS;
   title = 'my-pokedex-app';
-  challengedTrainerId: string = '...';
+  challengedTrainerId?: string;
 
   get challengedTrainer() {
     return this.trainers.find(

@@ -278,4 +278,8 @@ export class TeamInfoComponent {
   onStartAddPokemon() {
     this.isAddPokemonVisible = true;
   }
+
+  onCancelAddPokemon() {
+    this.isAddPokemonVisible = false;
+  }
 }

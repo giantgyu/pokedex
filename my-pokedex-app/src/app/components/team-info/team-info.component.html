@@ -1,20 +1,21 @@
 @if (isAddPokemonVisible){
 <app-add-pokemon (cancel)="onCancelAddPokemon()" (add)="onAddPokemon($event)" />
 }
+<app-card>
+  <section id="team-info">
+    <header>
+      <h2>{{ name }}</h2>
+      <menu>
+        <button (click)="onStartAddPokemon()">Add a Pokemon</button>
+      </menu>
+    </header>
 
-<section id="team-info">
-  <header>
-    <h2>{{ name }}</h2>
-    <menu>
-      <button (click)="onStartAddPokemon()">Add a Pokemon</button>
-    </menu>
-  </header>
-
-  <ul>
-    @for (pokemon of challengedTrainerPokemons; track pokemon.id){
-    <li>
-      <app-pokemon [pokemon]="pokemon" (delete)="onDeletePokemon($event)" />
-    </li>
-    }
-  </ul>
-</section>
+    <ul>
+      @for (pokemon of challengedTrainerPokemons; track pokemon.id){
+      <li>
+        <app-pokemon [pokemon]="pokemon" (delete)="onDeletePokemon($event)" />
+      </li>
+      }
+    </ul>
+  </section>
+</app-card>

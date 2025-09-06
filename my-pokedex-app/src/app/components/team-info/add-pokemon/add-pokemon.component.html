@@ -4,17 +4,27 @@
   <form>
     <p>
       <label for="pokemon">Pokemon</label>
-      <input type="text" id="pokemon" name="pokemon" />
+      <input
+        type="text"
+        id="pokemon"
+        name="pokemon"
+        [(ngModel)]="enteredPokemon"
+      />
     </p>
 
     <p>
       <label for="pokedex-entry">Pokedex Entry</label>
-      <textarea id="pokedex-entry" rows="5" name="pokedex-entry"></textarea>
+      <textarea
+        id="pokedex-entry"
+        rows="5"
+        name="pokedex-entry"
+        [(ngModel)]="enteredPokedexEntry"
+      ></textarea>
     </p>
 
     <p>
       <label for="type1">Primary Type</label>
-      <select id="type1" name="type1">
+      <select id="type1" name="type1" [(ngModel)]="enteredType1">
         <option value="">-- Select type --</option>
         <option value="Normal">Normal</option>
         <option value="Fire">Fire</option>
@@ -39,7 +49,7 @@
 
     <p>
       <label for="type2">Secondary Type (optional)</label>
-      <select id="type2" name="type2">
+      <select id="type2" name="type2" [(ngModel)]="enteredType2">
         <option value="">-- None --</option>
         <option value="Normal">Normal</option>
         <option value="Fire">Fire</option>

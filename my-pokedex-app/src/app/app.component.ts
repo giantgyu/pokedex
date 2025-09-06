@@ -13,4 +13,8 @@ import { DUMMY_USERS } from './dummy-users';
 export class AppComponent {
   trainers = DUMMY_USERS;
   title = 'my-pokedex-app';
+
+  onChallengeTrainer(name: string) {
+    alert(`You challenged Gym Leader ${name}!`);
+  }
 }

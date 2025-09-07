@@ -16,6 +16,8 @@ export class PokemonComponent {
   constructor(private pokemonService: PokemonService) {}
 
   onDeleteClick() {
-    this.pokemonService.removePokemon(this.pokemon.id);
+    if (confirm('Are you sure broooo?')) {
+      this.pokemonService.removePokemon(this.pokemon.id);
+    }
   }
 }

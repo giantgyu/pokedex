@@ -21,10 +21,6 @@ export class TeamInfoComponent {
     return this.pokemonService.getTrainerPokemons(this.trainerId);
   }
 
-  onDeletePokemon(idToDelete: string) {
-    this.pokemonService.removePokemon(idToDelete);
-  }
-
   onStartAddPokemon() {
     this.isAddPokemonVisible = true;
   }

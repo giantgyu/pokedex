@@ -1,3 +1,7 @@
+@if(isEditPokemonVisible){
+<app-edit-pokemon [pokemonId]="this.pokemon.id" (close)="closeEditPokemon()" />
+}
+
 <app-card>
   <article>
     <h2>{{ pokemon.name }}</h2>
@@ -6,6 +10,7 @@
     }
     <p>{{ pokemon.pokedexEntry }}</p>
     <p class="actions">
+      <button (click)="onEditClick()">Edit</button>
       <button (click)="onDeleteClick()">Delete</button>
     </p>
   </article>

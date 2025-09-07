@@ -282,6 +282,21 @@ export class PokemonService {
     this.savePokemons();
   }
 
+  getPokemonData(pokemonId: string) {
+    return this.pokemons.find((pokemon) => pokemon.id === pokemonId)!;
+  }
+
+  editPokemonData(pokemonId: string, editPokemonData: NewPokemonData) {
+    const index = this.pokemons.findIndex(
+      (pokemon) => pokemon.id === pokemonId
+    );
+    this.pokemons[index].name = editPokemonData.pokemon;
+    this.pokemons[index].pokedexEntry = editPokemonData.pokedexEntry;
+    this.pokemons[index].types = editPokemonData.types;
+
+    this.savePokemons();
+  }
+
   private savePokemons() {
     localStorage.setItem('pokemons', JSON.stringify(this.pokemons));
   }

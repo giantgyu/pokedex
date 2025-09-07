@@ -2,6 +2,7 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Pokemon } from '../../../models/pokemon.model';
 import { LowerCasePipe } from '@angular/common';
 import { CardComponent } from '../../../shared/card/card.component';
+import { PokemonService } from '../../../../services/pokemon.service';
 
 @Component({
   selector: 'app-pokemon',
@@ -11,9 +12,10 @@ import { CardComponent } from '../../../shared/card/card.component';
 })
 export class PokemonComponent {
   @Input({ required: true }) pokemon!: Pokemon;
-  @Output() delete = new EventEmitter<string>();
+
+  constructor(private pokemonService: PokemonService) {}
 
   onDeleteClick() {
-    this.delete.emit(this.pokemon.id);
+    this.pokemonService.removePokemon(this.pokemon.id);
   }
 }

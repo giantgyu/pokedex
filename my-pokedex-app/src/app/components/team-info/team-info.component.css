@@ -6,6 +6,10 @@
   background-color: #542c2c;
 }
 
+#end-of-list {
+  text-align: center;
+}
+
 header {
   display: flex;
   justify-content: space-between;
@@ -48,7 +52,7 @@ ul {
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  max-height: 50vh;
+  max-height: 45vh;
   overflow: auto;
 }
 

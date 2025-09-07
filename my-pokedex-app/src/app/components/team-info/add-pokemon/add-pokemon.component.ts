@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { NewPokemonData } from '../../../models/new-pokemon.model';
+import { PokemonService } from '../../../../services/pokemon.service';
 
 @Component({
   selector: 'app-add-pokemon',
@@ -9,8 +9,10 @@ import { NewPokemonData } from '../../../models/new-pokemon.model';
   styleUrl: './add-pokemon.component.css',
 })
 export class AddPokemonComponent {
-  @Output() cancel = new EventEmitter<void>();
-  @Output() add = new EventEmitter<NewPokemonData>();
+  @Input({ required: true }) trainerId!: string;
+  @Output() close = new EventEmitter<void>();
+
+  constructor(private pokemonService: PokemonService) {}
 
   enteredPokemon = '';
   enteredPokedexEntry = '';
@@ -18,14 +20,18 @@ export class AddPokemonComponent {
   enteredType2 = '';
 
   onCancelClick() {
-    this.cancel.emit();
+    this.close.emit();
   }
 
   onSubmit() {
-    this.add.emit({
-      pokemon: this.enteredPokemon,
-      types: [this.enteredType1, this.enteredType2],
-      pokedexEntry: this.enteredPokedexEntry,
-    });
+    this.pokemonService.addPokemon(
+      {
+        pokemon: this.enteredPokemon,
+        types: [this.enteredType1, this.enteredType2],
+        pokedexEntry: this.enteredPokedexEntry,
+      },
+      this.trainerId
+    );
+    this.close.emit();
   }
 }

@@ -1,5 +1,5 @@
 @if (isAddPokemonVisible){
-<app-add-pokemon (cancel)="onCancelAddPokemon()" (add)="onAddPokemon($event)" />
+<app-add-pokemon (close)="onCloseAddPokemon()" [trainerId]="trainerId" />
 }
 <app-card>
   <section id="team-info">
@@ -10,12 +10,18 @@
       </menu>
     </header>
 
+    @if(challengedTrainerPokemons.length!==0){
     <ul>
       @for (pokemon of challengedTrainerPokemons; track pokemon.id){
       <li>
-        <app-pokemon [pokemon]="pokemon" (delete)="onDeletePokemon($event)" />
+        <app-pokemon [pokemon]="pokemon" />
       </li>
+      } @if(challengedTrainerPokemons.length>=3){
+      <p id="end-of-list">-----End of List-----</p>
       }
     </ul>
+    }@else {
+    <p>Nothing to view here!</p>
+    }
   </section>
 </app-card>

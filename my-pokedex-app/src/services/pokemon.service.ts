@@ -1,10 +1,17 @@
 import { Injectable } from '@angular/core';
 import { type NewPokemonData } from '../app/models/new-pokemon.model';
-import { type Pokemon } from '../app/models/pokemon.model';
 
 @Injectable({ providedIn: 'root' })
 export class PokemonService {
-  private pokemons: Pokemon[] = [
+  constructor() {
+    const pokemons = localStorage.getItem('pokemons');
+
+    if (pokemons) {
+      this.pokemons = JSON.parse(pokemons);
+    }
+  }
+
+  private pokemons = [
     // --- Brock (Rock-type) ---
     {
       id: 'p1',
@@ -265,12 +272,17 @@ export class PokemonService {
       types: pokemonData.types,
       pokedexEntry: pokemonData.pokedexEntry,
     });
-    // this.isAddPokemonVisible = false;
+    this.savePokemons();
   }
 
   removePokemon(idToDelete: string) {
     this.pokemons = this.pokemons.filter(
       (pokemon) => pokemon.id !== idToDelete
     );
+    this.savePokemons();
+  }
+
+  private savePokemons() {
+    localStorage.setItem('pokemons', JSON.stringify(this.pokemons));
   }
 }
